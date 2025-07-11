@@ -14,16 +14,45 @@ private:
     User *controller;
 
 public:
-    Car(/* args */);
+    Car(const std::string &brand, int mileage, const std::string &make, int id)
+        : brand(brand), mileage(mileage), make(make), id(id), currentSpeed(0), controller(nullptr) {}
     ~Car();
+
+    void updateMileage(int x);
+
+    void setController(User *user)
+    {
+        controller = user;
+    }
+    std::string getBrand()
+    {
+        return brand;
+    }
+
+    int getMileage()
+    {
+        return mileage;
+    }
+
+    std::string getMake()
+    {
+        return make;
+    }
+
+    int getId()
+    {
+        return id;
+    }
+
+    int getCurrentSpeed()
+    {
+        return currentSpeed;
+    }
+
+    User *getController()
+    {
+        return controller;
+    }
 };
-
-Car::Car(/* args */)
-{
-}
-
-Car::~Car()
-{
-}
 
 #endif
